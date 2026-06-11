@@ -1,0 +1,10 @@
+# Main i3 configuration file
+set $mod Mod4
+
+# Include modular configurations
+include ~/.config/i3/config.d/general
+include ~/.config/i3/config.d/autostart
+include ~/.config/i3/config.d/keybindings
+include ~/.config/i3/config.d/workspaces
+include ~/.config/i3/config.d/modes
+include ~/.config/i3/config.d/bar
