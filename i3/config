@@ -1,6 +1,11 @@
 # Main i3 configuration file
 set $mod Mod4
 
+set $up k
+set $down j
+set $right l
+set $left h
+
 # Include modular configurations
 include ~/.config/i3/config.d/general
 include ~/.config/i3/config.d/autostart

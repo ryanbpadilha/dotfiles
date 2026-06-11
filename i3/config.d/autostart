@@ -4,3 +4,6 @@ exec --no-startup-id nm-applet
 
 # Display configuration
 exec_always --no-startup-id xrandr --output HDMI-1-1 --auto --right-of eDP-1
+
+# Configure layouts (e.g., US and Brazil with Alt+Shift toggle)
+exec --no-startup-id setxkbmap -layout us,br -option grp:alt_shift_toggle
