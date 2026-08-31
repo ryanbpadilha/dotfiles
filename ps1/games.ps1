@@ -1,0 +1,4 @@
+@(
+  "Valve.Steam"
+  "EpicGames.EpicGamesLauncher"
+)

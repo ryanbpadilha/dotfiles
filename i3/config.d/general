@@ -1,3 +1,0 @@
-font pango:monospace 8
-floating_modifier $mod
-tiling_drag modifier titlebar
