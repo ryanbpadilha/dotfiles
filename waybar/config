@@ -1,0 +1,33 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 4,
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "network", "sway/language", "tray"],
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}"
+    },
+    "clock": {
+        "format": "{:%a %b %d  %H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "pulseaudio": {
+        "format": "VOL {volume}%",
+        "format-muted": "MUTED",
+        "on-click": "pavucontrol"
+    },
+    "network": {
+        "format-wifi": "WIFI",
+        "format-ethernet": "ETH",
+        "format-disconnected": "OFF",
+        "tooltip-format": "{ifname} via {gwaddr}"
+    },
+    "sway/language": {
+        "format": "{short}"
+    }
+}
