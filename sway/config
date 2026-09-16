@@ -18,6 +18,12 @@ set $term foot
 # Your preferred application launcher
 set $menu wmenu-run
 
+# Toggle Light/Dark mode via darkman
+bindsym $mod+Shift+d exec darkctl toggle
+
+# Focus follows mouse
+focus_follows_mouse no
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -261,11 +267,27 @@ smart_gaps on
 # Optional: Hide borders if there is only one window on the workspace
 smart_borders on
 
-exec mako
-exec nm-applet --indicator
-exec blueman-applet
+# Startup Applications
+exec --no-startup-id alarm-clock-applet --hidden
+exec --no-startup-id nm-applet --indicator
+exec --no-startup-id blueman-applet
+exec --no-startup-id mako
 
 # Capture region to clipboard
 bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy
 
+# System control mode definition
+set $sys_mode [r]estart  [l]ock  [p]ower off
+mode "$sys_mode" {
+    bindsym r exec systemctl reboot, mode "default"
+    bindsym l exec swaylock -f -c 000000, mode "default"
+    bindsym p exec systemctl poweroff, mode "default"
+
+    # Exit mode without action
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# Bind Mod + Escape to trigger the menu
+bindsym $mod+Escape mode "$sys_mode"
 
